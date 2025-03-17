@@ -1,5 +1,9 @@
 import streamlit as st
+import joblib
 
-st.title('Dermatolog Machine Learning')
+def main():
+  st.title('Dermatolog Machine Learning')
+  st.info('This App using Machine Learning')
 
-st.info('This App using Machine Learning')
+if __name__== "__main__":
+  main()

@@ -1,13 +1,22 @@
 import streamlit as st
 import joblib
+import pandas as pd
 
-def load_model(filename):
-  model = joblib.load(filename)
-  return model
+# def load_model(filename):
+#   model = joblib.load(filename)
+#   return model
   
-def predict_with_model(model, user_input):
-  prediction = model.predict([user_input])
-  return prediction[0]
+# def predict_with_model(model, user_input):
+#   prediction = model.predict([user_input])
+#   return prediction[0]
+
+data = pd.read_csv("ObesityDataSet_raw_and_data_sinthetic.csv") 
+df = pd.DataFrame(data)
+
+# Expander to show raw data
+with st.expander("Data"):
+    st.write("This is a raw data")
+    st.dataframe(df)
 
 def main():
   st.title('Dermatology Machine Learning')
